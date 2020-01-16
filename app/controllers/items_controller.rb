@@ -11,6 +11,11 @@ class ItemsController < ApplicationController
         render :json => Item.find(params[:id]) 
     end
 
+    def destroy
+        @item = Item.find(params[:id])
+        @item.destroy
+      end
+
     private
     def set_params_item 
         params.require(:item).permit(:user_id, :buyer_id, :image, :name, :price)
