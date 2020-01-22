@@ -17,8 +17,8 @@ class UsersController < ApplicationController
     end
 
     def update 
-        render :json => User.find(params[:id])
-        @user = User.update(set_params_user)
+        @user = User.find(params[:id])
+        @user.update(set_params_user)
         render :json => @user
     end
 
